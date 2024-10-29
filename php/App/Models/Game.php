@@ -27,6 +27,10 @@ class Game
         $this->winner = null;
     }
     public function play($columna) {  
+
+        if (!$this->board->isValidMove($columna)) {
+            throw new \Exception("Invalido movement");
+        }
         //Realiza un movimiento
         $this->board->setMovementOnBoard($columna, $this->currentPlayer);
     

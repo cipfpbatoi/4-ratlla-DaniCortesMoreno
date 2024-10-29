@@ -16,7 +16,7 @@
             <option value="red">Rojo</option>
             <option value="blue">Azul</option>
             <option value="green">Verde</option>
-            <option value="yelloew">Amarillo</option>
+            <option value="yellow">Amarillo</option>
             <option value="black">Negro</option>
             <option value="white">Blanco</option>
         </select><br><br>
