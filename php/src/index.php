@@ -10,5 +10,6 @@ $log = new Logs();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gameController = new GameController($log ,$_POST); 
 } else {
-    loadView('jugador');
+    //loadView('jugador');
+    loadView('login'); //Para que solo con poner localhost entre a la pagina del login.
 }
