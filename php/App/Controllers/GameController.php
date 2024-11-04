@@ -5,13 +5,22 @@ use Joc4enRatlla\Models\Player;
 use Joc4enRatlla\Models\Game;
 use Joc4enRatlla\Services\Logs;
 
-
+/**
+ * Summary of GameController
+ * @author Dani
+ * @package Joc4enRatlla\Controllers;
+ */
 class GameController
 {
     private Game $game;
     private Logs $log;
     // Request és l'array $_POST
 
+    /**
+     * Summary of __construct
+     * @param \Joc4enRatlla\Services\Logs $log
+     * @param mixed $request
+     */
     public function __construct(Logs $log, $request = null)
     {
         $this->log = $log;
@@ -29,7 +38,12 @@ class GameController
         $this->play($request);
 
     }
-
+    
+    /**
+     * Summary of play
+     * @param array $request
+     * @return void
+     */
     public function play(array $request)
     {
 
@@ -57,7 +71,7 @@ class GameController
 
         }
         
-
+        
         //Guarda l'estat del joc a les sessions
         if (isset($request['reset'])) {
             $this->game->reset();
