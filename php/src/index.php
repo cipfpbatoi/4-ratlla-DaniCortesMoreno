@@ -7,9 +7,15 @@ use Joc4enRatlla\Services\Logs;
 
 $log = new Logs();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $gameController = new GameController($log ,$_POST); 
+if(isset($_SESSION['nom_usuari'])){
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $gameController = new GameController($log ,$_POST); 
+    } else {
+        //loadView('jugador');
+        loadView('jugador'); //Para que solo con poner localhost entre a la pagina del login.
+    }
 } else {
-    //loadView('jugador');
-    loadView('login'); //Para que solo con poner localhost entre a la pagina del login.
+    //echo "PRIMERO DEBES INICIAR SESIÓN";
+    header('location: login.php');
 }
+

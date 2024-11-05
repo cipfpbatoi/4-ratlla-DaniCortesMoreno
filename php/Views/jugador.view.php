@@ -7,6 +7,7 @@
 </head>
 <body>
     <h2>Formulario</h2>
+    <h3><?php echo "Bienvenido " . $_SESSION['nom_usuari']; ?></h3>
     <form action="index.php" method="post">
         <label for="nombre">Nombre:</label><br>
         <input type="text" id="nombre" name="nombre" required><br><br>
@@ -22,6 +23,11 @@
         </select><br><br>
         
         <input type="submit" value="Enviar">
+        
+    </form>
+
+    <form action="logout.php" method="post">
+        <input type="submit" name="logout" value="logout">
     </form>
 </body>
 </html>

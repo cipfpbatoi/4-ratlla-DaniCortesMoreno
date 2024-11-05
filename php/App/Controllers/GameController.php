@@ -11,7 +11,6 @@ class GameController
     private Game $game;
     private Logs $log;
     // Request és l'array $_POST
-
     public function __construct(Logs $log, $request = null)
     {
         $this->log = $log;
