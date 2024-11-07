@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="4ratlla.css?v=<?php echo time(); ?>">
     <title>4 en ratlla</title>
     <style>
-        .buttonREiniciar, .buttonSalir {
+        .buttonREiniciar, .buttonSalir, .buttonGuardar, .buttonCargar, .buttonAtras {
             background-color: #4CAF50;
             border: none;
             color: white;
@@ -17,10 +17,6 @@
             transition: background-color 0.3s, transform 0.2s;
         }
 
-        .buttonSalir {
-            background-color: #f44336;
-        }
-
         .buttonREiniciar:hover {
             background-color: #45a049;
             transform: scale(1.05);
@@ -28,6 +24,21 @@
 
         .buttonSalir:hover {
             background-color: #e53935;
+            transform: scale(1.05);
+        }
+
+        .buttonGuardar:hover {
+            background-color: #008CBA;
+            transform: scale(1.05);
+        }
+
+        .buttonCargar:hover {
+            background-color: goldenrod;
+            transform: scale(1.05);
+        }
+
+        .buttonAtras:hover {
+            background-color: plum;
             transform: scale(1.05);
         }
 
@@ -48,6 +59,7 @@
     <input class="buttonSalir" type="submit" name="exit" value="Acabar joc">
     <input class="buttonGuardar" type="submit" name="guardar" value="Guardar joc">
     <input class="buttonCargar" type="submit" name="cargar" value="Cargar joc">
+    <input class="buttonAtras" type="submit" name="atras" value="Volver atrás">
 </form>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/../Views/partials/panel.view.php' ?>
 </body>

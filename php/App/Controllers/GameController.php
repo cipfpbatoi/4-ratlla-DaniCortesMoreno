@@ -55,7 +55,7 @@ class GameController
             $this->log->getLog()->error("Error en la columna " . $request['columna']);
 
         }
-        
+
 
         //Guarda l'estat del joc a les sessions
         if (isset($request['reset'])) {
@@ -78,6 +78,9 @@ class GameController
             $this->game = Game::restoreDb();
         }
 
+        if (isset($request['atras'])) {
+            header('location: index.php');
+        }
 
         $board = $this->game->getBoard();
         $players = $this->game->getPlayers();
