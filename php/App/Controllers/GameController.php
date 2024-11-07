@@ -70,6 +70,14 @@ class GameController
             exit;
         }
 
+        if (isset($request['guardar'])) {
+            $this->game->saveDb();
+        }
+
+        if (isset($request['cargar'])) {
+            $this->game = Game::restoreDb();
+        }
+
 
         $board = $this->game->getBoard();
         $players = $this->game->getPlayers();

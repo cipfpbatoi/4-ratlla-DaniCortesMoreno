@@ -2,6 +2,7 @@
 
 namespace Joc4enRatlla\Models;
 
+use Joc4enRatlla\Controllers\LoginController;
 use Joc4enRatlla\Models\Board;
 use Joc4enRatlla\Models\Player;
 
@@ -92,17 +93,29 @@ class Game
     public function save() { //Guarda l'estat del joc a les sessions
         $_SESSION['game'] = serialize($this);
     }  
+
+    public function saveDb() { //Guarda l'estat del joc a les sessions
+        $_SESSION['game'] = serialize($this);
+        $serializedGame = $_SESSION['game'] = serialize($this);
+        LoginController::guardarPartidaBd($serializedGame);
+    }  
+
+    public static function restoreDb() { //Restaura l'estat del joc de les sessions
+        if (isset($_SESSION['game'])) {
+            $partida = LoginController::restorePartidaBd($_SESSION['nom_usuari']);
+            $_SESSION['game'] = $partida;
+            return unserialize($_SESSION['game'], [Game::class]);
+        }
+        return null;
+    } 
+
     public static function restore() { //Restaura l'estat del joc de les sessions
-        //retornar la partida que está guardada en la variable de sesion.
-        //Cada vez que cargue la pagina hay que hacer restore para recargar partida.
         if (isset($_SESSION['game'])) {
             return unserialize($_SESSION['game'], [Game::class]);
         }
-
         return null;
-
-
     } 
+
 
     
     // getters i setters

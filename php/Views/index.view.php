@@ -46,6 +46,8 @@
     <?php include_once $_SERVER['DOCUMENT_ROOT'].'/../Views/partials/board.view.php' ?>
     <input class="buttonREiniciar" type="submit" name="reset" value="Reiniciar joc">
     <input class="buttonSalir" type="submit" name="exit" value="Acabar joc">
+    <input class="buttonGuardar" type="submit" name="guardar" value="Guardar joc">
+    <input class="buttonCargar" type="submit" name="cargar" value="Cargar joc">
 </form>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/../Views/partials/panel.view.php' ?>
 </body>
